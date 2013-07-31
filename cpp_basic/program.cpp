@@ -22,13 +22,13 @@ static inline void lineto(float u, float v) {
 }
 
 static inline void paint_cell(float u, float v) {
-    moveto(u + 0.5 * size_u, v);
-    lineto(u, v + 0.25 * size_v);
-    lineto(u, v + 0.75 * size_v);
-    lineto(u + 0.5 * size_u, v + size_v);
-    lineto(u + size_u, v + 0.75 * size_v);
-    lineto(u + size_u, v + 0.25 * size_v);
-    lineto(u + 0.5 * size_u, v);
+    moveto(u + 0.5f * size_u, v);
+    lineto(u, v + 0.25f * size_v);
+    lineto(u, v + 0.75f * size_v);
+    lineto(u + 0.5f * size_u, v + size_v);
+    lineto(u + size_u, v + 0.75f * size_v);
+    lineto(u + size_u, v + 0.25f * size_v);
+    lineto(u + 0.5f * size_u, v);
 }
 
 static inline void paint_row(float u, float v, int col) {
@@ -39,8 +39,8 @@ static inline void paint_row(float u, float v, int col) {
 
 static inline void paint_grid(float u, float v, int col, int row) {
     while (row--) {
-        paint_row(u + (row & 1)? 0.5 * size_u: 0,
-            v + 0.75 * size_v * row, col);
+        paint_row(u + ((row & 1)? 0.5f * size_u: 0),
+            v + 0.75f * size_v * row, col);
     }
 }
 
